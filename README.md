@@ -35,9 +35,9 @@ https://xd.adobe.com/view/abe67be2-dc70-489b-8cb3-dd24dc61f340-feb5/specs/
 
 #### Instalación
 cd C:\xampp\htdocs <br>
-git clone https://github.com/aospinagcg/Prueba2022.git gc_equipos <br>
-cd gc_equipos <br>
+git clone https://github.com/aospinagcg/Prueba2022.git Prueba2022 <br>
+cd Prueba2022 <br>
 composer install
 
 #### Apertura
-localhost/gc_equipos
+localhost/Prueba2022/view

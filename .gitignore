@@ -1,2 +1,2 @@
-private/vendor
-private/composer.lock
+vendor
+composer.lock
