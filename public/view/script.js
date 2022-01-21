@@ -4,7 +4,7 @@
 import { Request } from "../../assets/js/request";
 
 /**
- * @typedef {object} Computer Composición del computador
+ * @typedef {object} Caracteristicas Composición del computador
  * @property {string | number} gce_id Idetificación única del computador
  * @property {string} gce_nombre_equipo Nombre del equipo
  * @property {string} gce_board Tipo de placa base
@@ -19,10 +19,10 @@ import { Request } from "../../assets/js/request";
  * @property {string | number} gce_estado Estado del registro
  */
 
-/** Clase que representa al componente view */
-class View {
+/** Clase que representa al componente computador */
+class Computador {
 
-  /** @type {(keyof Computer)[]} Listado de campos de la tabla de computadores */
+  /** @type {(keyof Caracteristicas)[]} Listado de campos de la tabla de computadores */
   static columnList = [
     'gce_nombre_equipo',
     'gce_board',
@@ -44,13 +44,13 @@ class View {
    * Obtiene el listado de computadores y los actualiza en la tabla 
    * @param {string} parameters Parámetros de tipo GET
    */
-  static getComputers = (parameters = '') => Request.get('Caracteristicas', 'getAll', parameters);
+  static get = (parameters = '') => Request.get('Caracteristicas', 'getAll', parameters);
 
   /**
    * Actualiza el listado de computadores en la tabla
-   * @param {Computer[]} data 
+   * @param {Caracteristicas[]} data 
    */
-  static setComputerList(data) {
+  static setList(data) {
     /** @type {HTMLElement} Referencia del cuerpo de la tabla */
     const tbody = document.querySelector('#list-table tbody');
     tbody.innerHTML = ''; // Limpia la tabla
@@ -76,19 +76,19 @@ class View {
 
   /** 
    * Registra un computador en la base de datos 
-   * @param {Partial<Record<keyof Computer, string>>} parameters Valores de inserción
+   * @param {Partial<Record<keyof Caracteristicas, string>>} parameters Valores de inserción
    */
-  static registerComputer = (parameters) => Request.post('Caracteristicas', 'addOne', parameters);
+  static add = (parameters) => Request.post('Caracteristicas', 'addOne', parameters);
 
 }
 
 // Evento que espera a que cargue el contenido HTML 
 document.addEventListener('DOMContentLoaded', () => {
 
-  View.getComputers() // Actualiza la tabla de computadores
-    .then(/** @param {DataType<Computer[]>} response */(response) => {
+  Computador.get() // Actualiza la tabla de computadores
+    .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
       console.log(87, response, response.data);
-      View.setComputerList(response.data);
+      Computador.setList(response.data);
     }).catch(error => console.log('Ha ocurrido un error', error));
 
   /** @type {HTMLFormElement} Referencia del formulario de registro */
@@ -98,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
   registerForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Cancela la redirección HTML
 
-    /** @type {Partial<Record<keyof Computer, string>>} */
+    /** @type {Partial<Record<keyof Caracteristicas, string>>} */
     const parameters = {};
 
-    View.columnList.forEach(columnName => {
+    Computador.columnList.forEach(columnName => {
       if (columnName !== 'gce_id') {
         /** @type {HTMLInputElement | HTMLSelectElement} */
         const input = registerForm.querySelector(`[name="${columnName}"]`);
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    View.registerComputer(parameters) // Registra el computador
-      .then(/** @param {DataType<Computer[]>} response */(response) => {
+    Computador.add(parameters) // Registra el computador
+      .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
         console.log(111, response, response.data);
       }).catch(error => console.log('Ha ocurrido un error', error));
   });
