@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/Prueba2022/">
+  <title>Gestión de equipos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://kit.fontawesome.com/1e30f8602f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="display-flex mb-4" style="height: 40px; width: 100%;">
+      <h6 style="flex: 1 1 auto;">Registro computadores</h6>
+      <img src="assets/img/gc-icon.png" style="height: 100%;">
+    </div>
+    <!-- Formulario de inserción -->
+    <form id="register-form" class="row">
+      <!-- gce_nombre_equipo -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_nombre_equipo" placeholder="Nombre del equipo">
+      </div>
+      <!-- gce_board -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_board" placeholder="Board">
+      </div>
+      <!-- gce_case -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_case" placeholder="Case">
+      </div>
+      <!-- gce_procesador -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_procesador" placeholder="Procesador">
+      </div>
+      <!-- gce_grafica -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_grafica" placeholder="Gráfica">
+      </div>
+      <!-- gce_ram -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_ram" placeholder="Ram">
+      </div>
+      <!-- gce_disco_duro -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_disco_duro" placeholder="Disco">
+      </div>
+      <!-- gce_teclado -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_teclado" placeholder="Teclado">
+      </div>
+      <!-- gce_mouse -->
+      <div class="mb-3 col-lg-4 col-sm-6">
+        <input required class="form-control" type="text" name="gce_mouse" placeholder="Mouse">
+      </div>
+      <!-- gce_pantalla -->
+      <div class="mb-3 col-sm-6 col-lg-6">
+        <input required class="form-control" type="text" name="gce_pantalla" placeholder="Pantalla">
+      </div>
+      <!-- gce_estado -->
+      <label class="mb-3 col-sm-6 col-lg-6 position-relative">
+        <div class="position-absolute">Estado</div>
+        <select class="form-select" name="gce_estado">
+          <option value="0">Inactivo</option>
+          <option value="1" selected>Activo</option>
+        </select>
+      </label>
+      <div class="col-12 mb-3 display-grid">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-plus-square me-2 vertical-align-middle" style="font-size: 1.2em;"></i>
+          Agregar
+        </button>
+      </div>
+    </form>
+    <h6 class="ms-5">Computadores</h6>
+    <!-- Listado -->
+    <div class="card">
+      <div class="card-body">
+        <table id="list-table" class="table">
+          <thead>
+            <tr>
+              <th column-name="gce_nombre_equipo">Nombre</th>
+              <th column-name="gce_board">Board</th>
+              <th column-name="gce_case">Case</th>
+              <th column-name="gce_procesador">Procesador</th>
+              <th column-name="gce_grafica">Gráfica</th>
+              <th column-name="gce_ram">Ram</th>
+              <th column-name="gce_disco_duro">Disco duro</th>
+              <th column-name="gce_teclado">Teclado</th>
+              <th column-name="gce_mouse">Mouse</th>
+              <th column-name="gce_pantalla">Pantalla</th>
+              <th column-name="gce_estado">Estado</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+  <script type="module" src="public/view/script.js"></script>
+</body>
+
+</html>

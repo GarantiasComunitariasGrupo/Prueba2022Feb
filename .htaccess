@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /Prueba2022/
+RewriteRule ^(private|assets|public)(/|$) - [L]
+RewriteRule ^(.*)$ public/$1 [L]

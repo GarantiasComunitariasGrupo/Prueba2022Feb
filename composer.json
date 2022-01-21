@@ -1,0 +1,14 @@
+{
+  "name": "aospina/prueba_2022",
+  "description": "GC Equipos",
+  "type": "project",
+  "license": "MIT",
+  "authors": [],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "GCE\\": "private/"
+    }
+  }
+}
