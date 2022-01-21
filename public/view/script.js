@@ -40,8 +40,11 @@ class View {
 
   constructor() { }
 
-  /** Obtiene el listado de computadores y los actualiza en la tabla */
-  static getComputers = () => Request.get('Caracteristicas', 'getAll');
+  /** 
+   * Obtiene el listado de computadores y los actualiza en la tabla 
+   * @param {string} parameters Parámetros de tipo GET
+   */
+  static getComputers = (parameters = '') => Request.get('Caracteristicas', 'getAll', parameters);
 
   /**
    * Actualiza el listado de computadores en la tabla
