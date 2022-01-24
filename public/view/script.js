@@ -1,7 +1,7 @@
 // @ts-check
 
 /** @template T @typedef { import('../../assets/js/request.js').DataType<T> } DataType */
-import { Request } from "../../assets/js/request.js";
+import { ApiRequest } from "../../assets/js/request.js";
 
 /**
  * @typedef {object} Caracteristicas Composición del computador
@@ -40,69 +40,48 @@ class Computador {
 
   constructor() { }
 
-  /** 
-   * Obtiene el listado de computadores y los actualiza en la tabla 
-   * @param {string} parameters Parámetros de tipo GET
-   */
-  static get = (parameters = '') => Request.get('Caracteristicas', 'getAll', parameters);
+  /** Actualiza el listado de computadores en la tabla */
+  static get() {
+    ApiRequest.get('Caracteristicas', 'getAll').then(/** @param {DataType<Caracteristicas[]>} response */response => {
+      /** @type {HTMLElement} Referencia del cuerpo de la tabla */
+      const tbody = document.querySelector('#list-table tbody');
+      tbody.innerHTML = ''; // Limpia la tabla
 
-  /**
-   * Actualiza el listado de computadores en la tabla
-   * @param {Caracteristicas[]} data 
-   */
-  static setList(data) {
-    /** @type {HTMLElement} Referencia del cuerpo de la tabla */
-    const tbody = document.querySelector('#list-table tbody');
-    tbody.innerHTML = ''; // Limpia la tabla
+      response.data.forEach(item => { // Ingresa los registros en la tabla
+        let row = '<tr>'; // Crea la fila
 
-    data.forEach(item => { // Ingresa los registros en la tabla
-      let row = '<tr>'; // Crea la fila
-
-      this.columnList.forEach(columnName => {
-        if (columnName !== 'gce_id') {
-          let column = '<td>'; // Crea la columna
-          switch (columnName) { // Añade el texto a la columna
-            case 'gce_estado': column += (+item[columnName] === 1 ? 'Activo' : 'Inactivo'); break;
-            default: column += item[columnName]; break;
+        this.columnList.forEach(columnName => {
+          if (columnName !== 'gce_id') { // El id es autoincrementable para el registro
+            let column = '<td>'; // Crea la columna
+            switch (columnName) { // Añade el texto a la columna
+              case 'gce_estado': column += (+item[columnName] === 1 ? 'Activo' : 'Inactivo'); break;
+              default: column += item[columnName]; break;
+            }
+            column += '</td>';
+            row += column; // Añade la columna a la fila
           }
-          column += '</td>';
-          row += column; // Añade la columna a la fila
-        }
-      });
+        });
 
-      row += '</tr>';
-      tbody.innerHTML += row; // Añade la fila a la tabla
-    });
+        row += '</tr>';
+        tbody.innerHTML += row; // Añade la fila a la tabla
+      });
+    }).catch(error => console.log('Ha ocurrido un error', error));
   }
 
   /** 
    * Registra un computador en la base de datos 
-   * @param {Partial<Record<keyof Caracteristicas, string>>} parameters Valores de inserción
+   * @param {SubmitEvent} event Evento submit del formulario
    */
-  static add = (parameters) => Request.post('Caracteristicas', 'addOne', parameters);
+  static add = (event) => {
+    event.preventDefault(); // Cancela el restablecimiento de la página
 
-}
-
-// Evento que espera a que cargue el contenido HTML 
-document.addEventListener('DOMContentLoaded', () => {
-
-  Computador.get() // Actualiza la tabla de computadores
-    .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
-      console.log('Obtener', response, response.data);
-      Computador.setList(response.data);
-    }).catch(error => console.log('Ha ocurrido un error', error));
-
-  /** @type {HTMLFormElement} Referencia del formulario de registro */
-  const registerForm = document.querySelector('#register-form');
-
-  /** Evento de guardar */
-  registerForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Cancela la redirección HTML
+    /** Formulario de registro */
+    const registerForm =  /** @type {HTMLFormElement} */ (event.target);
 
     /** @type {Partial<Record<keyof Caracteristicas, string>>} */
     const parameters = {};
 
-    Computador.columnList.forEach(columnName => {
+    this.columnList.forEach(columnName => {
       if (columnName !== 'gce_id') {
         /** @type {HTMLInputElement | HTMLSelectElement} */
         const input = registerForm.querySelector(`[name="${columnName}"]`);
@@ -110,10 +89,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    Computador.add(parameters) // Registra el computador
-      .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
-        console.log('Añadir', response, response.data);
-      }).catch(error => console.log('Ha ocurrido un error', error));
-  });
+    ApiRequest.post('Caracteristicas', 'addOne', parameters).then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
+      console.log('Añadir', response, response.data);
+    }).catch(error => console.log('Ha ocurrido un error', error));
+  };
 
+}
+
+// Evento que espera a que cargue el contenido HTML 
+document.addEventListener('DOMContentLoaded', () => {
+  Computador.get(); // Actualiza la tabla de computadores
 });
+
+
+(function () { // Habilita el uso de las clases en el archivo HTML
+  this.Computador = Computador;
+  this.ApiRequest = ApiRequest;
+}).apply(window);

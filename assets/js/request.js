@@ -6,7 +6,7 @@
  */
 
 /** Clase que permite hacer peticiones al api */
-class Request {
+class ApiRequest {
   /** Ruta del api */
   static apiPath = '/Prueba2022/private/';
 
@@ -68,4 +68,4 @@ class Request {
 
 };
 
-export { Request };
+export { ApiRequest };
