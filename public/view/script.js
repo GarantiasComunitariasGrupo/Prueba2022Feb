@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Computador.get() // Actualiza la tabla de computadores
     .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
-      console.log(87, response, response.data);
+      console.log(91, response, response.data);
       Computador.setList(response.data);
     }).catch(error => console.log('Ha ocurrido un error', error));
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Computador.add(parameters) // Registra el computador
       .then(/** @param {DataType<Caracteristicas[]>} response */(response) => {
-        console.log(111, response, response.data);
+        console.log(115, response, response.data);
       }).catch(error => console.log('Ha ocurrido un error', error));
   });
 
