@@ -90,6 +90,11 @@ tr {
   border-style: none;
 }
 
-table, table.table {
+.table > :not(:first-child) {
+  border-top: none;
+}
+
+table,
+table.table {
   margin-bottom: 0;
 }

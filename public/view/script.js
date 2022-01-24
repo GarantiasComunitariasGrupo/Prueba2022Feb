@@ -59,14 +59,15 @@ class Computador {
       let row = '<tr>'; // Crea la fila
 
       this.columnList.forEach(columnName => {
-        let column = '<td>'; // Crea la columna
-        switch (columnName) { // Añade el texto a la columna
-          case 'gce_id': /** No añade la propiedad Id */ break;
-          case 'gce_estado': column += (+item[columnName] === 1 ? 'Activo' : 'Inactivo'); break;
-          default: column += item[columnName]; break;
+        if (columnName !== 'gce_id') {
+          let column = '<td>'; // Crea la columna
+          switch (columnName) { // Añade el texto a la columna
+            case 'gce_estado': column += (+item[columnName] === 1 ? 'Activo' : 'Inactivo'); break;
+            default: column += item[columnName]; break;
+          }
+          column += '</td>';
+          row += column; // Añade la columna a la fila
         }
-        column += '</td>';
-        row += column; // Añade la columna a la fila
       });
 
       row += '</tr>';
