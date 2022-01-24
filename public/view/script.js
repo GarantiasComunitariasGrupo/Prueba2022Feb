@@ -1,7 +1,7 @@
 // @ts-check
 
-/** @template T @typedef { import('../../assets/js/request').DataType<T> } DataType */
-import { Request } from "../../assets/js/request";
+/** @template T @typedef { import('../../assets/js/request.js').DataType<T> } DataType */
+import { Request } from "../../assets/js/request.js";
 
 /**
  * @typedef {object} Caracteristicas Composición del computador
