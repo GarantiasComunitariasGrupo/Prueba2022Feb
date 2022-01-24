@@ -43,7 +43,7 @@ class CaracteristicasController
     /** Trae un computador con base en su id */
     public function getOne()
     {
-        $this->model->gce_id = isset($_POST['gce_id']) ? $_POST['gce_id'] : null;
+        $this->model->gce_id = isset($_GET['gce_id']) ? $_GET['gce_id'] : null;
         $response = $this->model->get();
         echo json_encode($response);
     }
