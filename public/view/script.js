@@ -1,5 +1,3 @@
-// @ts-check
-
 /** @template T @typedef { import('../../assets/js/request.js').DataType<T> } DataType */
 import { ApiRequest } from "../../assets/js/request.js";
 
