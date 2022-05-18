@@ -47,8 +47,8 @@ Nota: Ninguna de las acciones descritas anteriormente deberá recargar la págin
 
 #### Instalación
 
-(Xampp) cd C:\xampp\htdocs\Prueba2022
-(Wamp) cd C:\wamp64\www\Prueba2022
+(Xampp) cd C:\xampp\htdocs\Prueba2022 <br>
+(Wamp) cd C:\wamp64\www\Prueba2022 <br>
 composer install
 
 #### Apertura
@@ -67,11 +67,11 @@ composer install
 
 #### Instalación
 
-(Xampp) cd C:\xampp\htdocs\Prueba2022\public\components
-(Wamp) cd C:\wamp64\www\Prueba2022\public\components
+(Xampp) cd C:\xampp\htdocs\Prueba2022\public\components <br>
+(Wamp) cd C:\wamp64\www\Prueba2022\public\components <br>
 npm install
 
 #### Apertura
 
-(Consola) ng serve
+(Consola) ng serve <br>
 (Navegador) localhost:4200
