@@ -14,8 +14,8 @@ class ApiRequest {
 
   /** Petición de tipo POST al api 
    * @param {string} contoller Nombre del controlador del api sin la palabra clave Controller (Puede ser escrito en PascalCase o kebab-case)
-   * @param {string} action Nombre del método del controlador del api a ejecutar (Puede ser escrito en PascalCase o kebab-case)
-   * @param {Record<string, any>} parameters Parámetros
+   * @param {string} action Nombre del método del controlador del api a ejecutar (Puede ser escrito en camelCase o kebab-case)
+   * @param {Record<string, any>} parameters Parámetros 
    * @returns {Promise<DataType<any>>} Retorno del servicio
   */
   static post(contoller, action, parameters = {}) {
@@ -25,8 +25,9 @@ class ApiRequest {
   /**
    * Petición de tipo GET al api
    * @param {string} contoller Nombre del controlador del api sin la palabra clave Controller (Puede ser escrito en PascalCase o kebab-case)
-   * @param {string} action Nombre del método del controlador del api a ejecutar (Puede ser escrito en PascalCase o kebab-case)
-   * @param {string} parameters Parámetros
+   * @param {string} action Nombre del método del controlador del api a ejecutar (Puede ser escrito en camelCase o kebab-case)
+   * @param {string} parameters Parámetros de URL
+   * @example ?param1=val&param2=val
    * @returns {Promise<DataType<any>>} Retorno del servicio
    */
   static get(contoller, action, parameters = '') {

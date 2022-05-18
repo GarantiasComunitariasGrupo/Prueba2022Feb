@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --bs-font-sans-serif: "Montserrat";
+}
+
+body {
+    background: #f5f9fc;
+    padding: 2rem 3rem;
+}
+
+h6 {
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.display-grid {
+    display: grid;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+select.form-select,
+select {
+    padding-bottom: 0.3215rem;
+    padding-top: 1rem;
+    font-size: 0.7rem;
+    color: #545454;
+}
+
+label > div {
+    padding-top: 0.3215rem;
+    padding-left: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+select.form-select,
+input.form-control,
+select,
+input {
+    padding-left: 1.5rem;
+    font-size: 0.7rem;
+    height: 2.44rem;
+}
+
+.btn-primary {
+    background-image: linear-gradient(90deg, #29628d, #1a4465);
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.card .card-body {
+    padding: 1.5rem 2.5rem;
+}
+
+table thead tr th {
+    font-size: 0.8rem;
+}
+
+table tbody tr td {
+    vertical-align: middle;
+    font-size: 0.8rem;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-style: none;
+}
+
+.table > :not(:first-child) {
+    border-top: none;
+}
+
+table,
+table.table {
+    margin-bottom: 0;
+}

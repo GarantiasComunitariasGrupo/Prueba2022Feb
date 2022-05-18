@@ -2,6 +2,10 @@
 
 require '../vendor/autoload.php';
 
+header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header("Access-Control-Allow-Origin: *"); // Permite acceso.
+
 class Index
 {
 
