@@ -57,13 +57,20 @@ composer install
 
 # Prueba aspirantes Angular
 
-- Realizar el mismo en proyecto en Angular
+- Con base en el funcionamiento del código de HTML Y Javascript, realizar migración del mismo para el framework de Angular.
 - La regla de estilo de la fila deberá aplicarse por medio de una directiva
 - El formulario de actualización debe crearse en un componente por separado y los datos del computador seleccionado deberán pasarse por decoradores Input
 - Una vez actualizado el computador, deberá informar al componente app por medio del decorador Output
 - Utilice formularios reactivos para la recolección y validación de información de registro y actualización
 - La construcción de la tabla deberá hacerce en el html, por medio de la directiva ngFor
 - Dentro de la tabla, utilice un pipe que convierta la inicial de cada una de las columnas siempre en mayúscula y el resto en minúscula
+
+# Prueba aspirantes Laravel
+
+- Con base en el funcionamiento del código de PHP nativo, realizar migración del mismo para el framework de Laravel.
+- Crear modelo para la tabla `gce_caracteristicas`.
+- Crear controlador para definir la lógica y métodos de `gce_caracteristicas`.
+- Crear API de servicios que retornen la información solicitada por el cliente => ANGULAR.
 
 #### Instalación
 

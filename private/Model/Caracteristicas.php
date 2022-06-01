@@ -77,7 +77,7 @@ class Caracteristicas extends Connection
             $this->clear();
             return ["status" => 200, "response" => true, "data" => $sql->fetchAll(PDO::FETCH_ASSOC)];
         } catch (\Throwable $th) {
-            return ["status" => 400, "response" => false, "message" => 'No es posible consultar los registros: ' . $th->getMessage()];
+            return ["status" => 200, "response" => false, "message" => 'No es posible consultar los registros: ' . $th->getMessage()];
         }
     }
 
@@ -111,7 +111,7 @@ class Caracteristicas extends Connection
             $this->gce_id = $this->DB->lastInsertId();
             return $this->get();
         } catch (\Throwable $th) {
-            return ["status" => 400, "response" => false, "message" => 'No es posible insertar el registro: ' . $th->getMessage()];
+            return ["status" => 200, "response" => false, "message" => 'No es posible insertar el registro: ' . $th->getMessage()];
         }
     }
 
