@@ -32,7 +32,7 @@ git clone https://github.com/aospinagcg/Prueba2022Feb.git Prueba2022 <br>
 
 https://xd.adobe.com/view/abe67be2-dc70-489b-8cb3-dd24dc61f340-feb5/specs/
 
-# Prueba aspirantes JavaScript
+# Prueba aspirantes JavaScript y PHP
 
 El proyecto de gestión de equipos permite registrar y listar las características de los computadores de la compañía, es necesario añadir las siguientes funciones al proyecto:
 
@@ -55,6 +55,27 @@ composer install
 
 (Navegador) localhost/Prueba2022/views
 
+# Prueba aspirantes Laravel
+
+- Con base en el funcionamiento del código de PHP nativo, realizar migración del mismo para el framework de Laravel.
+- Crear la definición de la tabla `gce_caracteristicas` en las migraciones.
+- Crear modelo para la tabla `gce_caracteristicas`.
+- Crear controlador para definir la lógica y métodos de `gce_caracteristicas`.
+- Utilice el ORM Eloquent en todas las peticiones hacia la base de datos
+- Crear API de servicios que retornen la información solicitada por el cliente => ANGULAR.
+
+#### Instalación
+
+(Xampp) cd C:\xampp\htdocs\Prueba2022\laravel <br>
+(Wamp) cd C:\wamp64\www\Prueba2022\laravel <br>
+composer install <br>
+npm install
+
+#### Apertura
+
+(Consola) php artisan serve <br>
+(Navegador) localhost:8000
+
 # Prueba aspirantes Angular
 
 - Con base en el funcionamiento del código de HTML Y Javascript, realizar migración del mismo para el framework de Angular.
@@ -64,13 +85,7 @@ composer install
 - Utilice formularios reactivos para la recolección y validación de información de registro y actualización
 - La construcción de la tabla deberá hacerce en el html, por medio de la directiva ngFor
 - Dentro de la tabla, utilice un pipe que convierta la inicial de cada una de las columnas siempre en mayúscula y el resto en minúscula
-
-# Prueba aspirantes Laravel
-
-- Con base en el funcionamiento del código de PHP nativo, realizar migración del mismo para el framework de Laravel.
-- Crear modelo para la tabla `gce_caracteristicas`.
-- Crear controlador para definir la lógica y métodos de `gce_caracteristicas`.
-- Crear API de servicios que retornen la información solicitada por el cliente => ANGULAR.
+- Los servicios deberán consumir la información del API de Laravel
 
 #### Instalación
 
@@ -82,3 +97,8 @@ npm install
 
 (Consola) ng serve <br>
 (Navegador) localhost:4200
+
+# Respuesta
+
+Una vez finalizada la prueba, deberá subir el proyecto en su propio repositorio de git de forma pública y enviar el link al correo aospina@garantiascomnitarias.com,
+con el asunto POSTULADO RED SOPORTE TECNOLÓGICO, además deberá incluir sus datos personales como nombre, cédula y contacto.
