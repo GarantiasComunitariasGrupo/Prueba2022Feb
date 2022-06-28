@@ -27,6 +27,7 @@ Tabla: gce_caracteristicas
 (Xampp) cd C:\xampp\htdocs <br>
 (Wamp) cd C:\wamp64\www <br>
 git clone https://github.com/aospinagcg/Prueba2022Feb.git Prueba2022 <br>
+Nótese que la carpeta debe renombrarse a "Prueba2022", de lo contrario, no funcionará correctamente <br>
 
 #### Diseño
 
