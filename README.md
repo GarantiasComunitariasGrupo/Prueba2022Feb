@@ -70,7 +70,10 @@ composer install
 (Xampp) cd C:\xampp\htdocs\Prueba2022\laravel <br>
 (Wamp) cd C:\wamp64\www\Prueba2022\laravel <br>
 composer install <br>
-npm install
+npm install <br>
+<br>
+Los proyectos de Larave requieren un archivo ".env" en la raíz para funcionar, renombre el archivo ".env.example". <br>
+Además, deberá ejecutar el comando "php artisan key:generate" <br>
 
 #### Apertura
 
