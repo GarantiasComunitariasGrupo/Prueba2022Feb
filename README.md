@@ -72,7 +72,7 @@ composer install
 composer install <br>
 npm install <br>
 <br>
-Los proyectos de Larave requieren un archivo ".env" en la raíz para funcionar, renombre el archivo ".env.example". <br>
+Los proyectos de Larave requieren un archivo ".env" en la raíz para funcionar, renombre y configure el archivo ".env.example". <br>
 Además, deberá ejecutar el comando "php artisan key:generate" <br>
 
 #### Apertura
