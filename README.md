@@ -100,5 +100,5 @@ npm install
 
 # Respuesta
 
-Una vez finalizada la prueba, deberá subir el proyecto en su propio repositorio de git de forma pública y enviar el link al correo aospina@garantiascomnitarias.com,
+Una vez finalizada la prueba, deberá subir el proyecto en su propio repositorio de git de forma pública y enviar el link al correo aospina@garantiascomunitarias.com,
 con el asunto POSTULADO RED SOPORTE TECNOLÓGICO, además deberá incluir sus datos personales como nombre, cédula y contacto.
