@@ -24,6 +24,7 @@ Tabla: gce_caracteristicas
 
 #### Instalación
 
+(Consola CMD) <br>
 (Xampp) cd C:\xampp\htdocs <br>
 (Wamp) cd C:\wamp64\www <br>
 git clone https://github.com/aospinagcg/Prueba2022Feb.git Prueba2022 <br>
@@ -48,6 +49,7 @@ Nota: Ninguna de las acciones descritas anteriormente deberá recargar la págin
 
 #### Instalación
 
+(Consola CMD) <br>
 (Xampp) cd C:\xampp\htdocs\Prueba2022 <br>
 (Wamp) cd C:\wamp64\www\Prueba2022 <br>
 composer install
