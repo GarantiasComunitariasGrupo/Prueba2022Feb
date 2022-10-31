@@ -72,7 +72,7 @@ composer install
 (Consola CMD) <br>
 (Xampp) cd C:\xampp\htdocs\Prueba2022\laravel <br>
 (Wamp) cd C:\wamp64\www\Prueba2022\laravel <br>
-composer install
+composer install <br>
 npm install <br>
 <br>
 Los proyectos de Larave requieren un archivo ".env" en la raíz para funcionar, renombre y configure el archivo ".env.example". <br>
